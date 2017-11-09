@@ -11,8 +11,6 @@ import UIKit
 class BuyerDetailVController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
-    
-    
     //MARK:Properties
     
     var itemImgArray = [UIImage]()
