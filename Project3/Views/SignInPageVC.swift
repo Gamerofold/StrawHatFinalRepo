@@ -22,7 +22,7 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        FirebaseApp.configure()
+       // FirebaseApp.configure()
 //        vendorFlag = false
 //        buyerFlag = false
         // 1

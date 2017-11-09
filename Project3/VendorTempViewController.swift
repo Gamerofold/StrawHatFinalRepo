@@ -32,11 +32,218 @@ class VendorTempViewController: UIViewController {
     //    let refVendor = Database.database().reference(withPath: "vendors")
 
 
+    @IBOutlet var goBut: UIButton!
+    @IBAction func goButton(_ sender: UIButton) {
+        sender.isEnabled = false
+//        let refIDs = Database.database().reference(withPath: "IDs")
+//        refIDs.observe(.value, with: { snapshot in
+//            let storageRef = Storage.storage().reference()
+//            let refImageList = Database.database().reference(withPath: "image-list")
+//            let refIDs = Database.database().reference(withPath: "IDs")
+//            let refOrders = Database.database().reference(withPath: "orders")
+//            let refStore = Database.database().reference(withPath: "store")
+//            let refPurchase = Database.database().reference(withPath: "purchase")
+//            let refBuyer = Database.database().reference(withPath: "buyers")
+//            let refVendor = Database.database().reference(withPath: "vendors")
+//            refImageList.queryOrdered(byChild: "image-list").observe(.value, with: { snapshot in
+//
+//                // Get image names
+//                let value = snapshot.value as? NSDictionary
+//                let filename = value?["names"] as? [String] ?? ["defaultPhoto.png"]
+//
+//                //                for item in snapshot.children {
+//                //                    let newNames = ImageList(snapshot: item as! DataSnapshot)
+//                //                    self.imagesList = newNames
+//                //                }
+//                // Create a reference to the file you want to download
+//                let tImage = UIImage(named: "defaultPhoto")
+//                for item in filename {
+//                    let imageRef = storageRef.child("images/" + item)
+//
+//                    // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+//                    imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+//                        if let error = error {
+//                            self.imagesDict[item] = tImage
+//                        } else {
+//                            self.imagesDict[item] = UIImage(data: data!)
+//                        }
+//                    }
+//                }
+//
+//                for fileN in filename {
+//                    print(fileN) // = UIImage(named: fileN)
+//                }
+//            })
+//            refIDs.queryOrdered(byChild: "IDs").observe(.value, with: { snapshot in
+//                //                var newIDs: [generateNewID] = []
+//                for item in snapshot.children {
+//                    let newIDs = generateNewID(snapshot: item as! DataSnapshot)
+//                    self.allDatabaseIDs = newIDs
+//                }
+//                //                self.allIDs = newIDs[0]
+//                //                self.tableView.reloadData()
+//            })
+//            refOrders.queryOrdered(byChild: "orders").observe(.value, with: { snapshot in
+//                var newOrders: [Order] = []
+//                for item in snapshot.children {
+//                    let newOrder = Order(snapshot: item as! DataSnapshot)
+//                    newOrders.append(newOrder)
+//                }
+//                self.storeOrders = newOrders
+//                //                self.tableView.reloadData()
+//            })
+//            refPurchase.queryOrdered(byChild: "purchase").observe(.value, with: { snapshot in
+//                var newPurchases: [Purchases] = []
+//                for item in snapshot.children {
+//                    let newPurchase = Purchases(snapshot: item as! DataSnapshot)
+//                    newPurchases.append(newPurchase)
+//                }
+//                self.storePurchases = newPurchases
+//                //                self.tableView.reloadData()
+//            })
+//            refBuyer.queryOrdered(byChild: "buyers").observe(.value, with: { snapshot in
+//                var newBuyers: [Buyer] = []
+//                for item in snapshot.children {
+//                    let newBuyer = Buyer(snapshot: item as! DataSnapshot)
+//                    newBuyers.append(newBuyer)
+//                }
+//                self.storeBuyers = newBuyers
+//                //                self.tableView.reloadData()
+//            })
+//            refVendor.queryOrdered(byChild: "vendors").observe(.value, with: { snapshot in
+//                var newVendors: [Vendor] = []
+//                for item in snapshot.children {
+//                    let newVendor = Vendor(snapshot: item as! DataSnapshot)
+//                    newVendors.append(newVendor)
+//                }
+//                self.storeVendors = newVendors
+//                //                self.tableView.reloadData()
+//            })
+//            refStore.queryOrdered(byChild: "store").observe(.value, with: { snapshot in
+//                var newItems: [Store] = []
+//                var totalS = 0
+//                for item in snapshot.children {
+//                    let newItem = Store(snapshot: item as! DataSnapshot)
+//                    newItems.append(newItem)
+//                    totalS += 1
+//                }
+//                //                self.tableView.beginUpdates()
+//                self.storeItems = newItems
+//                self.inventoryCount = totalS
+//                //                self.tableView.reloadData()
+//                self.goBut.isEnabled = true
+//                self.performSegue(withIdentifier: "VendorHomeSegue", sender: self)
+//                //                self.tableView.endUpdates()
+//            })
+//        })
+
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         getImages()
+        let refIDs = Database.database().reference(withPath: "IDs")
+        refIDs.observe(.value, with: { snapshot in
+            let storageRef = Storage.storage().reference()
+            let refImageList = Database.database().reference(withPath: "image-list")
+            let refIDs = Database.database().reference(withPath: "IDs")
+            let refOrders = Database.database().reference(withPath: "orders")
+            let refStore = Database.database().reference(withPath: "store")
+            let refPurchase = Database.database().reference(withPath: "purchase")
+            let refBuyer = Database.database().reference(withPath: "buyers")
+            let refVendor = Database.database().reference(withPath: "vendors")
+            refImageList.queryOrdered(byChild: "image-list").observe(.value, with: { snapshot in
+                
+                // Get image names
+                let value = snapshot.value as? NSDictionary
+                let filename = value?["names"] as? [String] ?? ["defaultPhoto.png"]
+                
+                //                for item in snapshot.children {
+                //                    let newNames = ImageList(snapshot: item as! DataSnapshot)
+                //                    self.imagesList = newNames
+                //                }
+                // Create a reference to the file you want to download
+                let tImage = UIImage(named: "defaultPhoto")
+                for item in filename {
+                    let imageRef = storageRef.child("images/" + item)
+                    
+                    // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+                    imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+                        if let error = error {
+                            self.imagesDict[item] = tImage
+                        } else {
+                            self.imagesDict[item] = UIImage(data: data!)
+                        }
+                    }
+                }
+                
+                for fileN in filename {
+                    print(fileN) // = UIImage(named: fileN)
+                }
+            })
+            refIDs.queryOrdered(byChild: "IDs").observe(.value, with: { snapshot in
+                //                var newIDs: [generateNewID] = []
+                for item in snapshot.children {
+                    let newIDs = generateNewID(snapshot: item as! DataSnapshot)
+                    self.allDatabaseIDs = newIDs
+                }
+                //                self.allIDs = newIDs[0]
+                //                self.tableView.reloadData()
+            })
+            refOrders.queryOrdered(byChild: "orders").observe(.value, with: { snapshot in
+                var newOrders: [Order] = []
+                for item in snapshot.children {
+                    let newOrder = Order(snapshot: item as! DataSnapshot)
+                    newOrders.append(newOrder)
+                }
+                self.storeOrders = newOrders
+                //                self.tableView.reloadData()
+            })
+            refPurchase.queryOrdered(byChild: "purchase").observe(.value, with: { snapshot in
+                var newPurchases: [Purchases] = []
+                for item in snapshot.children {
+                    let newPurchase = Purchases(snapshot: item as! DataSnapshot)
+                    newPurchases.append(newPurchase)
+                }
+                self.storePurchases = newPurchases
+                //                self.tableView.reloadData()
+            })
+            refBuyer.queryOrdered(byChild: "buyers").observe(.value, with: { snapshot in
+                var newBuyers: [Buyer] = []
+                for item in snapshot.children {
+                    let newBuyer = Buyer(snapshot: item as! DataSnapshot)
+                    newBuyers.append(newBuyer)
+                }
+                self.storeBuyers = newBuyers
+                //                self.tableView.reloadData()
+            })
+            refVendor.queryOrdered(byChild: "vendors").observe(.value, with: { snapshot in
+                var newVendors: [Vendor] = []
+                for item in snapshot.children {
+                    let newVendor = Vendor(snapshot: item as! DataSnapshot)
+                    newVendors.append(newVendor)
+                }
+                self.storeVendors = newVendors
+                //                self.tableView.reloadData()
+            })
+            refStore.queryOrdered(byChild: "store").observe(.value, with: { snapshot in
+                var newItems: [Store] = []
+                var totalS = 0
+                for item in snapshot.children {
+                    let newItem = Store(snapshot: item as! DataSnapshot)
+                    newItems.append(newItem)
+                    totalS += 1
+                }
+                //                self.tableView.beginUpdates()
+                self.storeItems = newItems
+                self.inventoryCount = totalS
+                //                self.tableView.reloadData()
+                self.goBut.isEnabled = true
+                self.performSegue(withIdentifier: "VendorHomeSegue", sender: self)
+                //                self.tableView.endUpdates()
+            })
+        })
 
         
     }
@@ -55,106 +262,6 @@ class VendorTempViewController: UIViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "VendorHomeSegue" {
 
-                let refIDs = Database.database().reference(withPath: "IDs")
-            refIDs.observe(.value, with: { snapshot in
-                let storageRef = Storage.storage().reference()
-                let refImageList = Database.database().reference(withPath: "image-list")
-                let refIDs = Database.database().reference(withPath: "IDs")
-                let refOrders = Database.database().reference(withPath: "orders")
-                let refStore = Database.database().reference(withPath: "store")
-                let refPurchase = Database.database().reference(withPath: "purchase")
-                let refBuyer = Database.database().reference(withPath: "buyers")
-                let refVendor = Database.database().reference(withPath: "vendors")
-                refImageList.queryOrdered(byChild: "image-list").observe(.value, with: { snapshot in
-    
-                    // Get image names
-                    let value = snapshot.value as? NSDictionary
-                    let filename = value?["names"] as? [String] ?? ["defaultPhoto.png"]
-    
-                    //                for item in snapshot.children {
-                    //                    let newNames = ImageList(snapshot: item as! DataSnapshot)
-                    //                    self.imagesList = newNames
-                    //                }
-                    // Create a reference to the file you want to download
-                    let tImage = UIImage(named: "defaultPhoto")
-                    for item in filename {
-                        let imageRef = storageRef.child("images/" + item)
-    
-                        // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
-                        imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-                            if let error = error {
-                                self.imagesDict[item] = tImage
-                            } else {
-                                self.imagesDict[item] = UIImage(data: data!)
-                            }
-                        }
-                    }
-    
-                    for fileN in filename {
-                        print(fileN) // = UIImage(named: fileN)
-                    }
-                })
-                refIDs.queryOrdered(byChild: "IDs").observe(.value, with: { snapshot in
-                    //                var newIDs: [generateNewID] = []
-                    for item in snapshot.children {
-                        let newIDs = generateNewID(snapshot: item as! DataSnapshot)
-                        self.allDatabaseIDs = newIDs
-                    }
-                    //                self.allIDs = newIDs[0]
-                    //                self.tableView.reloadData()
-                })
-                refOrders.queryOrdered(byChild: "orders").observe(.value, with: { snapshot in
-                    var newOrders: [Order] = []
-                    for item in snapshot.children {
-                        let newOrder = Order(snapshot: item as! DataSnapshot)
-                        newOrders.append(newOrder)
-                    }
-                    self.storeOrders = newOrders
-                    //                self.tableView.reloadData()
-                })
-                refPurchase.queryOrdered(byChild: "purchase").observe(.value, with: { snapshot in
-                    var newPurchases: [Purchases] = []
-                    for item in snapshot.children {
-                        let newPurchase = Purchases(snapshot: item as! DataSnapshot)
-                        newPurchases.append(newPurchase)
-                    }
-                    self.storePurchases = newPurchases
-                    //                self.tableView.reloadData()
-                })
-                refBuyer.queryOrdered(byChild: "buyers").observe(.value, with: { snapshot in
-                    var newBuyers: [Buyer] = []
-                    for item in snapshot.children {
-                        let newBuyer = Buyer(snapshot: item as! DataSnapshot)
-                        newBuyers.append(newBuyer)
-                    }
-                    self.storeBuyers = newBuyers
-                    //                self.tableView.reloadData()
-                })
-                refVendor.queryOrdered(byChild: "vendors").observe(.value, with: { snapshot in
-                    var newVendors: [Vendor] = []
-                    for item in snapshot.children {
-                        let newVendor = Vendor(snapshot: item as! DataSnapshot)
-                        newVendors.append(newVendor)
-                    }
-                    self.storeVendors = newVendors
-                    //                self.tableView.reloadData()
-                })
-                refStore.queryOrdered(byChild: "store").observe(.value, with: { snapshot in
-                    var newItems: [Store] = []
-                    var totalS = 0
-                    for item in snapshot.children {
-                        let newItem = Store(snapshot: item as! DataSnapshot)
-                        newItems.append(newItem)
-                        totalS += 1
-                    }
-                    //                self.tableView.beginUpdates()
-                    self.storeItems = newItems
-                    self.inventoryCount = totalS
-                    //                self.tableView.reloadData()
-    
-                    //                self.tableView.endUpdates()
-                })
-            })
 
             let VendorMain = segue.destination as! VendorHomeVC
 

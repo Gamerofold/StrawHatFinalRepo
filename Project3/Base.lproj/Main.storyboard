@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BxA-nS-hTH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Z03-Ya-Hvv">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -523,7 +523,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Bob's Views"/>
                                 <connections>
-                                    <segue destination="k2P-TM-yO8" kind="show" identifier="VendorHomeSegue" id="cwZ-WG-rhx"/>
+                                    <action selector="goButton:" destination="Dcw-pu-HNn" eventType="touchUpInside" id="moW-4B-kLd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -531,10 +531,14 @@
                         <viewLayoutGuide key="safeArea" id="myE-0u-xPS"/>
                     </view>
                     <navigationItem key="navigationItem" title="Temp View for Vendors" id="2PM-IK-evT"/>
+                    <connections>
+                        <outlet property="goBut" destination="9NB-gL-nTE" id="2In-IU-pvZ"/>
+                        <segue destination="k2P-TM-yO8" kind="show" identifier="VendorHomeSegue" id="K3C-ON-qkp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t6q-nj-DKM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5288.8000000000002" y="759.67016491754134"/>
+            <point key="canvasLocation" x="5316" y="760"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ZDK-gQ-BQm">
