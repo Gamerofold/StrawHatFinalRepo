@@ -914,10 +914,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Project3/Project3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VNE5G69VK2;
+				DEVELOPMENT_TEAM = 7K443T6W44;
 				INFOPLIST_FILE = Project3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = strawhat.project.ecom;
+				PRODUCT_BUNDLE_IDENTIFIER = rw.sean.gettingstarted;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Project3/Project3-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -934,10 +934,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Project3/Project3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VNE5G69VK2;
+				DEVELOPMENT_TEAM = 7K443T6W44;
 				INFOPLIST_FILE = Project3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = strawhat.project.ecom;
+				PRODUCT_BUNDLE_IDENTIFIER = rw.sean.gettingstarted;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Project3/Project3-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;

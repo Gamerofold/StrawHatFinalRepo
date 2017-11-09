@@ -10,4 +10,8 @@ import UIKit
 
 class CheckoutDetailCell: UITableViewCell {
 
+    @IBOutlet weak var subTotalTextField: UILabel!
+    @IBOutlet weak var shippingAndHandlingTextField: UILabel!
+    @IBOutlet weak var taxTextField: UILabel!
+    
 }

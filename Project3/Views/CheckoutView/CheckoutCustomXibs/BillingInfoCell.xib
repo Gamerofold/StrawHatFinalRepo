@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,7 +25,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="371" height="429.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" support@ductran.co" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zgX-M9-pbU">
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" support@ductran.co" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zgX-M9-pbU">
                         <rect key="frame" x="22" y="66" width="327" height="44"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="44" id="tN8-6O-IO4"/>
@@ -32,13 +33,12 @@
                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                     </textField>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" fixedFrame="YES" text="Security Code:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtl-eS-wCI">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Security Code:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtl-eS-wCI">
                         <rect key="frame" x="22" y="319" width="327" height="19.5"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" CVC" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XVs-rj-u3d">
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" CVC" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XVs-rj-u3d">
                         <rect key="frame" x="22" y="347" width="327" height="44"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="44" id="KYJ-Ou-zMy"/>
@@ -46,13 +46,12 @@
                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                     </textField>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" fixedFrame="YES" text="Expiration Date:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4q-Xm-Wma">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Expiration Date:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4q-Xm-Wma">
                         <rect key="frame" x="22" y="224" width="327" height="19.5"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" MM/YY" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OVy-Nr-zOv">
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" MM/YY" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OVy-Nr-zOv">
                         <rect key="frame" x="22" y="252" width="327" height="44"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="44" id="s6T-8R-oSP"/>
@@ -60,13 +59,12 @@
                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
                     </textField>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" fixedFrame="YES" text="Card Number:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hK5-s5-FHz">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Card Number:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hK5-s5-FHz">
                         <rect key="frame" x="22" y="130" width="327" height="19.5"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" 1234-5678-1234-5678" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vgD-Ur-2tN">
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" 1234-5678-1234-5678" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vgD-Ur-2tN">
                         <rect key="frame" x="22" y="158" width="327" height="44"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="44" id="Cdm-xK-avg"/>
@@ -74,15 +72,47 @@
                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                     </textField>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" fixedFrame="YES" text="Email Address:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaX-wu-UwJ">
-                        <rect key="frame" x="22" y="37" width="327" height="20.5"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Email Address:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaX-wu-UwJ">
+                        <rect key="frame" x="22" y="37" width="327" height="19.5"/>
                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="XVs-rj-u3d" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="14" id="2ef-6A-SKV"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="rtl-eS-wCI" secondAttribute="trailing" constant="14" id="2zy-LV-SZn"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="hK5-s5-FHz" secondAttribute="trailing" constant="14" id="334-6E-TPQ"/>
+                    <constraint firstItem="OVy-Nr-zOv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="14" id="4Bp-Au-BNk"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Y4q-Xm-Wma" secondAttribute="trailing" constant="14" id="6r8-83-gtQ"/>
+                    <constraint firstItem="zaX-wu-UwJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="14" id="9Ak-Xd-crI"/>
+                    <constraint firstItem="rtl-eS-wCI" firstAttribute="top" secondItem="OVy-Nr-zOv" secondAttribute="bottom" constant="23" id="AZe-F1-Rl2"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="XVs-rj-u3d" secondAttribute="trailing" constant="14" id="BnY-Qy-1ka"/>
+                    <constraint firstItem="hK5-s5-FHz" firstAttribute="top" secondItem="zgX-M9-pbU" secondAttribute="bottom" constant="20" id="HIV-cL-6Hw"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="vgD-Ur-2tN" secondAttribute="trailing" constant="14" id="Hxb-MJ-W12"/>
+                    <constraint firstItem="hK5-s5-FHz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="14" id="IGb-Ra-LC2"/>
+                    <constraint firstItem="vgD-Ur-2tN" firstAttribute="top" secondItem="hK5-s5-FHz" secondAttribute="bottom" constant="8.5" id="MMA-Js-6vw"/>
+                    <constraint firstItem="zgX-M9-pbU" firstAttribute="top" secondItem="zaX-wu-UwJ" secondAttribute="bottom" constant="9.5" id="OfH-53-0Cq"/>
+                    <constraint firstItem="Y4q-Xm-Wma" firstAttribute="top" secondItem="vgD-Ur-2tN" secondAttribute="bottom" constant="22" id="OfL-Gc-2Nv"/>
+                    <constraint firstItem="XVs-rj-u3d" firstAttribute="top" secondItem="rtl-eS-wCI" secondAttribute="bottom" constant="8.5" id="QWd-AN-kds"/>
+                    <constraint firstItem="vgD-Ur-2tN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="14" id="Qer-w1-XnK"/>
+                    <constraint firstItem="zgX-M9-pbU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="14" id="VfU-WF-6eP"/>
+                    <constraint firstItem="Y4q-Xm-Wma" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="14" id="any-gj-eXt"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="OVy-Nr-zOv" secondAttribute="trailing" constant="14" id="caC-4S-Pjy"/>
+                    <constraint firstItem="zaX-wu-UwJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="29" id="eF1-nM-vpk"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="zgX-M9-pbU" secondAttribute="trailing" constant="14" id="gxz-aJ-CW8"/>
+                    <constraint firstItem="rtl-eS-wCI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="14" id="mEU-yq-suh"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="XVs-rj-u3d" secondAttribute="bottom" constant="30.5" id="njL-WB-p7C"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="zaX-wu-UwJ" secondAttribute="trailing" constant="14" id="qhE-SZ-mFA"/>
+                    <constraint firstItem="OVy-Nr-zOv" firstAttribute="top" secondItem="Y4q-Xm-Wma" secondAttribute="bottom" constant="8.5" id="yuK-m8-8Xp"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="cardNumberTextField" destination="vgD-Ur-2tN" id="SRw-Sg-cXY"/>
+                <outlet property="emailTextField" destination="zgX-M9-pbU" id="JNv-uG-UaK"/>
+                <outlet property="expirationDateTextField" destination="OVy-Nr-zOv" id="3gZ-9X-PcN"/>
+                <outlet property="securityCodeTextField" destination="XVs-rj-u3d" id="cjS-47-U93"/>
+            </connections>
             <point key="canvasLocation" x="23.5" y="79"/>
         </tableViewCell>
     </objects>

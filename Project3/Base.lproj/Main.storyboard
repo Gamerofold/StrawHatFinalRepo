@@ -391,7 +391,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mi0-RO-oLz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="926" y="1310"/>
+            <point key="canvasLocation" x="926" y="1394"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="Oun-7z-W5K">
@@ -472,7 +472,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rJg-cO-E09" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3110" y="1309"/>
+            <point key="canvasLocation" x="1756" y="1394"/>
         </scene>
         <!--Shopping Cart-->
         <scene sceneID="nJx-kH-y6L">
@@ -534,7 +534,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t6q-nj-DKM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5288.8000000000002" y="759.67016491754134"/>
+            <point key="canvasLocation" x="3262" y="1394"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ZDK-gQ-BQm">
@@ -565,6 +565,7 @@
                         <segue destination="g4k-aL-FCI" kind="relationship" relationship="viewControllers" id="HLw-sM-3a1"/>
                         <segue destination="Dzb-fw-7zK" kind="relationship" relationship="viewControllers" id="CIM-Z5-cRw"/>
                         <segue destination="FF5-ZT-KNh" kind="relationship" relationship="viewControllers" id="3NL-0e-2ML"/>
+                        <segue destination="Z03-Ya-Hvv" kind="relationship" relationship="viewControllers" id="vYI-4X-nnU"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WMb-0s-Upc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -619,10 +620,11 @@
             </objects>
             <point key="canvasLocation" x="2489" y="515"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Vendors-->
         <scene sceneID="DtQ-5l-EzN">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z03-Ya-Hvv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Vendors" id="Bq4-va-R5r"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sza-te-Y2f">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -635,7 +637,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P8c-yq-YMj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4615" y="760"/>
+            <point key="canvasLocation" x="2489" y="1394"/>
         </scene>
         <!--VendorHomeVC-->
         <scene sceneID="j7D-6y-496">
@@ -662,7 +664,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="neN-Ka-IAR">
-                                <rect key="frame" x="0.0" y="224" width="375" height="443"/>
+                                <rect key="frame" x="0.0" y="224" width="375" height="394"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier1" id="o1K-Ua-ni9" customClass="TableViewCell" customModule="Project3" customModuleProvider="target">
@@ -729,7 +731,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rR8-wz-d8E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5999" y="760"/>
+            <point key="canvasLocation" x="4044" y="1394"/>
         </scene>
         <!--VendorDetailVC-->
         <scene sceneID="j8e-XF-50s">
@@ -768,7 +770,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t6W-WV-mOM">
-                                <rect key="frame" x="0.0" y="224" width="375" height="443"/>
+                                <rect key="frame" x="0.0" y="224" width="375" height="394"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier2" rowHeight="120" id="5vB-Is-Ofb">
@@ -819,7 +821,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DgL-vj-JB7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6735" y="760"/>
+            <point key="canvasLocation" x="4929" y="1394"/>
         </scene>
     </scenes>
     <resources>

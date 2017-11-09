@@ -10,5 +10,6 @@ import UIKit
 
 class CheckoutTitleCell: UITableViewCell {
 
+    @IBOutlet weak var billingInfoLabel: UILabel!
     
 }

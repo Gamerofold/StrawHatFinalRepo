@@ -7,11 +7,11 @@
     
     var window: UIWindow?
     
-    private func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-//    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
             FirebaseApp.configure()
             Database.database().isPersistenceEnabled = true
             return true
+        
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
