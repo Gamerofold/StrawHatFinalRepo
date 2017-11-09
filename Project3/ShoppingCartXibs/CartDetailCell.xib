@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNextCondensed.ttc">
+            <string>AvenirNextCondensed-DemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="115" id="KGk-i7-Jjw" customClass="CartDetailCell" customModule="Project3" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="463" height="115"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="463" height="114.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtotal:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTG-iI-SSA">
+                        <rect key="frame" x="8" y="8" width="66" height="26"/>
+                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="19"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estimated Shipping and Handling:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VzG-Ek-FFa">
+                        <rect key="frame" x="8" y="44" width="247.5" height="26"/>
+                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="19"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tax:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUN-8n-kmL">
+                        <rect key="frame" x="8" y="78" width="28.5" height="26"/>
+                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="19"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YyD-bN-GcX">
+                        <rect key="frame" x="345" y="8" width="9" height="25"/>
+                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dva-1O-2ny">
+                        <rect key="frame" x="345" y="44" width="9" height="25"/>
+                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByR-eD-CLo">
+                        <rect key="frame" x="345" y="79" width="9" height="25"/>
+                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XX.XX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oiI-J9-8gV">
+                        <rect key="frame" x="365" y="8" width="43" height="26"/>
+                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="19"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XX.XX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dN3-vA-dA8">
+                        <rect key="frame" x="365" y="44" width="43" height="26"/>
+                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="19"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XX.XX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oW9-un-8VG">
+                        <rect key="frame" x="365" y="79" width="43" height="26"/>
+                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="19"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="UUN-8n-kmL" firstAttribute="leading" secondItem="VzG-Ek-FFa" secondAttribute="leading" id="4kL-O4-pUv"/>
+                    <constraint firstItem="ByR-eD-CLo" firstAttribute="leading" secondItem="dva-1O-2ny" secondAttribute="leading" id="53c-zk-vFO"/>
+                    <constraint firstItem="VzG-Ek-FFa" firstAttribute="top" secondItem="jTG-iI-SSA" secondAttribute="bottom" constant="10" id="6FM-Vt-CfM"/>
+                    <constraint firstItem="dva-1O-2ny" firstAttribute="leading" secondItem="YyD-bN-GcX" secondAttribute="leading" id="7hZ-6D-zwL"/>
+                    <constraint firstItem="oW9-un-8VG" firstAttribute="top" secondItem="dN3-vA-dA8" secondAttribute="bottom" constant="9" id="Cgn-Z9-Prj"/>
+                    <constraint firstItem="dN3-vA-dA8" firstAttribute="top" secondItem="oiI-J9-8gV" secondAttribute="bottom" constant="10" id="Czd-4m-1Pi"/>
+                    <constraint firstItem="YyD-bN-GcX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="345" id="DUD-g9-752"/>
+                    <constraint firstItem="dva-1O-2ny" firstAttribute="top" secondItem="YyD-bN-GcX" secondAttribute="bottom" constant="11" id="P3c-mU-ByS"/>
+                    <constraint firstItem="VzG-Ek-FFa" firstAttribute="leading" secondItem="jTG-iI-SSA" secondAttribute="leading" id="Tf7-bA-Qz7"/>
+                    <constraint firstItem="jTG-iI-SSA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Vkm-WR-dDR"/>
+                    <constraint firstItem="oiI-J9-8gV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Wzb-Xb-fcc"/>
+                    <constraint firstItem="oW9-un-8VG" firstAttribute="leading" secondItem="dN3-vA-dA8" secondAttribute="leading" id="a1c-ZK-J1b"/>
+                    <constraint firstItem="dN3-vA-dA8" firstAttribute="leading" secondItem="oiI-J9-8gV" secondAttribute="leading" id="a2m-hu-WZH"/>
+                    <constraint firstItem="jTG-iI-SSA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="faF-BL-dee"/>
+                    <constraint firstItem="ByR-eD-CLo" firstAttribute="top" secondItem="dva-1O-2ny" secondAttribute="bottom" constant="10" id="glf-gz-dSd"/>
+                    <constraint firstItem="oiI-J9-8gV" firstAttribute="leading" secondItem="YyD-bN-GcX" secondAttribute="trailing" constant="11" id="kN6-xD-YC7"/>
+                    <constraint firstItem="UUN-8n-kmL" firstAttribute="top" secondItem="VzG-Ek-FFa" secondAttribute="bottom" constant="8" id="mZo-MV-MJ7"/>
+                    <constraint firstItem="YyD-bN-GcX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="mwu-0W-0yh"/>
+                    <constraint firstAttribute="bottom" secondItem="UUN-8n-kmL" secondAttribute="bottom" constant="10.5" id="yR2-Ga-q0z"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="dollarSign1" destination="YyD-bN-GcX" id="QIF-d0-Lhb"/>
+                <outlet property="dollarSign2" destination="dva-1O-2ny" id="BPu-fP-0D6"/>
+                <outlet property="dollarSign3" destination="ByR-eD-CLo" id="f2r-xL-Qtp"/>
+                <outlet property="estShipAndHandlePlaceHolder" destination="VzG-Ek-FFa" id="mub-dW-CKh"/>
+                <outlet property="shipAndHandleCartTextField" destination="dN3-vA-dA8" id="kbk-dQ-PzE"/>
+                <outlet property="subTotalPlaceHolder" destination="jTG-iI-SSA" id="ZaW-6M-S7t"/>
+                <outlet property="subtotalCartTextField" destination="oiI-J9-8gV" id="Xbd-TC-2dI"/>
+                <outlet property="taxCartTextField" destination="oW9-un-8VG" id="hqA-Yr-GJK"/>
+                <outlet property="taxPlaceHolder" destination="UUN-8n-kmL" id="FBb-Wf-FSX"/>
+            </connections>
+            <point key="canvasLocation" x="110.5" y="89.5"/>
+        </tableViewCell>
+    </objects>
+</document>

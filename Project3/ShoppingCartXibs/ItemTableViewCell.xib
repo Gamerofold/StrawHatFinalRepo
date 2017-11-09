@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNextCondensed.ttc">
+            <string>AvenirNextCondensed-DemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="93" id="KGk-i7-Jjw" customClass="ItemTableViewCell" customModule="Project3" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="93"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="megaManBox" translatesAutoresizingMaskIntoConstraints="NO" id="LMo-94-he8">
+                        <rect key="frame" x="15" y="6" width="80" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="80" id="WKe-Jv-i6u"/>
+                            <constraint firstAttribute="width" constant="80" id="tdL-7h-Wui"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="u0e-4n-Ppd"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="xKB-iK-7Vx"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkL-n7-qtQ">
+                        <rect key="frame" x="100.5" y="33.5" width="79.5" height="26"/>
+                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="19"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m59-rG-PZS">
+                        <rect key="frame" x="240" y="33.5" width="72" height="26"/>
+                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="19"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhz-Rc-i73">
+                        <rect key="frame" x="222.5" y="33.5" width="9.5" height="26"/>
+                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="19"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="LMo-94-he8" secondAttribute="bottom" constant="6.5" id="3wo-ff-0O8"/>
+                    <constraint firstItem="gkL-n7-qtQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="33.5" id="5Ob-pE-xF1"/>
+                    <constraint firstAttribute="trailing" secondItem="m59-rG-PZS" secondAttribute="trailing" constant="8" id="9T8-2t-tE7"/>
+                    <constraint firstItem="m59-rG-PZS" firstAttribute="leading" secondItem="gkL-n7-qtQ" secondAttribute="trailing" constant="60" id="HfE-6P-99p"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="jhz-Rc-i73" secondAttribute="bottom" constant="25" id="ID5-21-Cou"/>
+                    <constraint firstItem="m59-rG-PZS" firstAttribute="leading" secondItem="jhz-Rc-i73" secondAttribute="trailing" constant="8" id="Yjg-Xr-5qm"/>
+                    <constraint firstItem="LMo-94-he8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="arx-9y-EVf"/>
+                    <constraint firstItem="LMo-94-he8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="bfb-t2-tOm"/>
+                    <constraint firstAttribute="bottom" secondItem="m59-rG-PZS" secondAttribute="bottom" constant="33" id="erc-br-CFk"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="itemCartImage" destination="LMo-94-he8" id="UU7-PH-RkT"/>
+                <outlet property="itemName" destination="gkL-n7-qtQ" id="Mty-WB-6Sc"/>
+                <outlet property="itemPrice" destination="m59-rG-PZS" id="YSk-lS-aMc"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="78.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="megaManBox" width="263" height="192"/>
+    </resources>
+</document>
