@@ -28,6 +28,8 @@ struct CheckoutButton {
     let checkoutButton: UIButton!
 }
 
+
+
 class ShoppingCartTableViewController: UITableViewController {
     
     var ref: DatabaseReference?

@@ -518,11 +518,40 @@
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="nhd-dZ-rgj" id="xMQ-OZ-5Zs"/>
+                        <segue destination="Wcv-dF-d1K" kind="show" identifier="checkout" id="djD-km-Vsk"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uSi-LV-htx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3937" y="515"/>
+        </scene>
+        <!--Check Out Table View Controller-->
+        <scene sceneID="le9-Jd-k5T">
+            <objects>
+                <tableViewController id="Wcv-dF-d1K" customClass="CheckOutTableViewController" customModule="Project3" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sZ5-tV-RP7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="157-wt-Edf">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="157-wt-Edf" id="Ozj-GL-TDo">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Wcv-dF-d1K" id="Gtq-b9-iqw"/>
+                            <outlet property="delegate" destination="Wcv-dF-d1K" id="s2c-Wy-8it"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nc2-Fn-v4g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4044" y="515"/>
         </scene>
         <!--Straw Hats Game Ecommerce-->
         <scene sceneID="BpE-fu-qFl">

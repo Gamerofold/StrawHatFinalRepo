@@ -10,7 +10,8 @@ import UIKit
 
 class CheckOutButtonCell: UITableViewCell {
 
-    @IBAction func checkoutCartButton(_ sender: Any) {
+    @IBAction func checkoutCartButton(_ sender: UIButton) {
+    
     }
     
     
