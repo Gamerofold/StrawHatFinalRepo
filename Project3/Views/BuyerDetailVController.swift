@@ -23,11 +23,14 @@ extension UIViewController {
 class BuyerDetailVController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
+<<<<<<< HEAD
     
     //MARK: firebase references
     private lazy var channelRef: DatabaseReference = Database.database().reference().child("store")
     private var channelRefHandle: DatabaseHandle?
     
+=======
+>>>>>>> 6250753d99b974a4fb7a301280079157eca7b903
     //MARK:Properties
     var productDetail = [BuyerProducts]()
     var itemImgArray = [UIImage]()

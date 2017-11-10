@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNextCondensed.ttc">
+            <string>AvenirNextCondensed-DemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="132" id="KGk-i7-Jjw" customClass="CheckoutDetailCell" customModule="Project3" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="434" height="132"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="434" height="131.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtotal:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8C2-dF-zVN">
+                        <rect key="frame" x="17" y="17" width="66" height="26"/>
+                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="19"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estimated Shipping and Handling:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6jI-Fw-zrx">
+                        <rect key="frame" x="17" y="53" width="247.5" height="26"/>
+                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="19"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tax:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mja-Fc-hdL">
+                        <rect key="frame" x="17" y="87" width="28.5" height="26"/>
+                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="19"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgd-BB-qSY">
+                        <rect key="frame" x="354" y="53" width="9" height="25"/>
+                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSq-TY-6z2">
+                        <rect key="frame" x="354" y="88" width="9" height="25"/>
+                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XX.XX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OwN-C1-eC6">
+                        <rect key="frame" x="374" y="17" width="43" height="26"/>
+                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="19"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XX.XX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7f-2d-1wf">
+                        <rect key="frame" x="374" y="53" width="43" height="26"/>
+                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="19"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XX.XX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WKW-uR-j76">
+                        <rect key="frame" x="374" y="88" width="43" height="26"/>
+                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="19"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Osw-8l-kxW">
+                        <rect key="frame" x="354" y="17" width="9" height="25"/>
+                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="K7f-2d-1wf" firstAttribute="leading" secondItem="lgd-BB-qSY" secondAttribute="trailing" constant="11" id="3RU-ob-Khi"/>
+                    <constraint firstItem="lgd-BB-qSY" firstAttribute="leading" secondItem="Osw-8l-kxW" secondAttribute="leading" id="4It-n1-jGP"/>
+                    <constraint firstItem="K7f-2d-1wf" firstAttribute="leading" secondItem="OwN-C1-eC6" secondAttribute="leading" id="5NZ-aE-T8m"/>
+                    <constraint firstItem="Osw-8l-kxW" firstAttribute="leading" secondItem="8C2-dF-zVN" secondAttribute="trailing" constant="271" id="App-Zb-MFh"/>
+                    <constraint firstItem="Mja-Fc-hdL" firstAttribute="top" secondItem="6jI-Fw-zrx" secondAttribute="bottom" constant="8" id="Byh-xb-5JQ"/>
+                    <constraint firstItem="WKW-uR-j76" firstAttribute="top" secondItem="K7f-2d-1wf" secondAttribute="bottom" constant="9" id="Ebh-eX-yr3"/>
+                    <constraint firstItem="8C2-dF-zVN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="17" id="Mph-Y3-i7b"/>
+                    <constraint firstItem="TSq-TY-6z2" firstAttribute="top" secondItem="lgd-BB-qSY" secondAttribute="bottom" constant="10" id="NWg-q2-f3h"/>
+                    <constraint firstItem="OwN-C1-eC6" firstAttribute="leading" secondItem="Osw-8l-kxW" secondAttribute="trailing" constant="11" id="P4y-g8-XbE"/>
+                    <constraint firstAttribute="bottom" secondItem="WKW-uR-j76" secondAttribute="bottom" constant="17.5" id="QfG-QW-JFr"/>
+                    <constraint firstItem="6jI-Fw-zrx" firstAttribute="top" secondItem="8C2-dF-zVN" secondAttribute="bottom" constant="10" id="S3Z-EF-tCc"/>
+                    <constraint firstItem="TSq-TY-6z2" firstAttribute="leading" secondItem="lgd-BB-qSY" secondAttribute="leading" id="SYO-GD-KiD"/>
+                    <constraint firstItem="Osw-8l-kxW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="Tvp-Ok-KOw"/>
+                    <constraint firstItem="WKW-uR-j76" firstAttribute="leading" secondItem="TSq-TY-6z2" secondAttribute="trailing" constant="11" id="VgT-ty-kKH"/>
+                    <constraint firstItem="8C2-dF-zVN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="XaD-6v-54v"/>
+                    <constraint firstItem="6jI-Fw-zrx" firstAttribute="leading" secondItem="8C2-dF-zVN" secondAttribute="leading" id="Zfl-tf-61C"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="TSq-TY-6z2" secondAttribute="bottom" constant="10.5" id="dKT-F1-xwe"/>
+                    <constraint firstItem="WKW-uR-j76" firstAttribute="leading" secondItem="K7f-2d-1wf" secondAttribute="leading" id="dPO-Xs-bHM"/>
+                    <constraint firstItem="Mja-Fc-hdL" firstAttribute="leading" secondItem="6jI-Fw-zrx" secondAttribute="leading" id="fZT-ps-t8E"/>
+                    <constraint firstAttribute="bottom" secondItem="Mja-Fc-hdL" secondAttribute="bottom" constant="18.5" id="iZ8-hE-Jci"/>
+                    <constraint firstItem="K7f-2d-1wf" firstAttribute="top" secondItem="OwN-C1-eC6" secondAttribute="bottom" constant="10" id="kfH-Qb-2go"/>
+                    <constraint firstItem="lgd-BB-qSY" firstAttribute="top" secondItem="Osw-8l-kxW" secondAttribute="bottom" constant="11" id="l2C-ne-ifG"/>
+                    <constraint firstItem="OwN-C1-eC6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="tp0-9H-h33"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="shippingAndHandlingTextField" destination="K7f-2d-1wf" id="nIa-Js-NJr"/>
+                <outlet property="subTotalTextField" destination="OwN-C1-eC6" id="3NZ-gW-reF"/>
+                <outlet property="taxTextField" destination="WKW-uR-j76" id="dbm-Aq-g09"/>
+            </connections>
+            <point key="canvasLocation" x="65" y="98"/>
+        </tableViewCell>
+    </objects>
+</document>
