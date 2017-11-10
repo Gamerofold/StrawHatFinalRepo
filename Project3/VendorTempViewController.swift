@@ -13,8 +13,11 @@ import FirebaseStorage
 class VendorTempViewController: UIViewController {
 
     var inventoryCount = 38
-
+    var buyerSigninID = ""
+    var vendorSigninID = ""
+    var allLoaded = 0
     var userEmail = ""
+    var buyerLogin = true
     var imagesDict: Dictionary = ["defaultPhoto.png": UIImage(named: "defaultPhoto")!]
     var allDatabaseIDs = generateNewID(buyer: 1000, vendor: 2000, purchase: 3000, order: 4000, store: 5000) // dummy/temp variables
     var storeOrders: [Order] = []
@@ -29,6 +32,7 @@ class VendorTempViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         let user = Auth.auth().currentUser
+        var userEmail = ""
         if let user = user {
             // The user's ID, unique to the Firebase project.
             // Do NOT use this value to authenticate with your backend server,
@@ -37,6 +41,10 @@ class VendorTempViewController: UIViewController {
             
             // ...
         }
+        buyerSigninID = ""
+        vendorSigninID = ""
+        allLoaded = 0
+        buyerLogin = true
         getImages()
         let refIDs = Database.database().reference(withPath: "IDs")
         refIDs.observe(.value, with: { snapshot in
@@ -48,6 +56,38 @@ class VendorTempViewController: UIViewController {
             let refPurchase = Database.database().reference(withPath: "purchase")
             let refBuyer = Database.database().reference(withPath: "buyers")
             let refVendor = Database.database().reference(withPath: "vendors")
+            refBuyer.queryOrdered(byChild: "buyers").observe(.value, with: { snapshot in
+                var newBuyers: [Buyer] = []
+                for item in snapshot.children {
+                    let newBuyer = Buyer(snapshot: item as! DataSnapshot)
+                    newBuyers.append(newBuyer)
+                }
+                self.storeBuyers = newBuyers
+                self.buyerSigninID = ""
+                for items in self.storeBuyers {
+                    if items.email == userEmail {
+                        self.buyerSigninID = items.key
+                    }
+                }
+                self.checkForSegue()
+                //                self.tableView.reloadData()
+            })
+            refVendor.queryOrdered(byChild: "vendors").observe(.value, with: { snapshot in
+                var newVendors: [Vendor] = []
+                for item in snapshot.children {
+                    let newVendor = Vendor(snapshot: item as! DataSnapshot)
+                    newVendors.append(newVendor)
+                }
+                self.storeVendors = newVendors
+                self.vendorSigninID = ""
+                for items in self.storeBuyers {
+                    if items.email == userEmail {
+                        self.vendorSigninID = items.key
+                    }
+                }
+                self.checkForSegue()
+                //                self.tableView.reloadData()
+            })
             refImageList.queryOrdered(byChild: "image-list").observe(.value, with: { snapshot in
                 
                 // Get image names
@@ -72,10 +112,10 @@ class VendorTempViewController: UIViewController {
                         }
                     }
                 }
-                
-                for fileN in filename {
-                    print(fileN) // = UIImage(named: fileN)
-                }
+                self.checkForSegue()
+//                for fileN in filename {
+//                    print(fileN) // = UIImage(named: fileN)
+//                }
             })
             refIDs.queryOrdered(byChild: "IDs").observe(.value, with: { snapshot in
                 //                var newIDs: [generateNewID] = []
@@ -83,6 +123,7 @@ class VendorTempViewController: UIViewController {
                     let newIDs = generateNewID(snapshot: item as! DataSnapshot)
                     self.allDatabaseIDs = newIDs
                 }
+                self.checkForSegue()
                 //                self.allIDs = newIDs[0]
                 //                self.tableView.reloadData()
             })
@@ -93,6 +134,7 @@ class VendorTempViewController: UIViewController {
                     newOrders.append(newOrder)
                 }
                 self.storeOrders = newOrders
+                self.checkForSegue()
                 //                self.tableView.reloadData()
             })
             refPurchase.queryOrdered(byChild: "purchase").observe(.value, with: { snapshot in
@@ -102,24 +144,7 @@ class VendorTempViewController: UIViewController {
                     newPurchases.append(newPurchase)
                 }
                 self.storePurchases = newPurchases
-                //                self.tableView.reloadData()
-            })
-            refBuyer.queryOrdered(byChild: "buyers").observe(.value, with: { snapshot in
-                var newBuyers: [Buyer] = []
-                for item in snapshot.children {
-                    let newBuyer = Buyer(snapshot: item as! DataSnapshot)
-                    newBuyers.append(newBuyer)
-                }
-                self.storeBuyers = newBuyers
-                //                self.tableView.reloadData()
-            })
-            refVendor.queryOrdered(byChild: "vendors").observe(.value, with: { snapshot in
-                var newVendors: [Vendor] = []
-                for item in snapshot.children {
-                    let newVendor = Vendor(snapshot: item as! DataSnapshot)
-                    newVendors.append(newVendor)
-                }
-                self.storeVendors = newVendors
+                self.checkForSegue()
                 //                self.tableView.reloadData()
             })
             refStore.queryOrdered(byChild: "store").observe(.value, with: { snapshot in
@@ -134,15 +159,53 @@ class VendorTempViewController: UIViewController {
                 self.storeItems = newItems
                 self.inventoryCount = totalS
                 //                self.tableView.reloadData()
+                self.checkForSegue()
 
-                self.performSegue(withIdentifier: "VendorHomeSegue", sender: self)
                 //                self.tableView.endUpdates()
             })
         })
 
         
     }
-
+    // CHECK FOR ALL DATABASES LOADED
+    func checkForSegue () {
+        allLoaded += 1
+        if allLoaded > 6 {
+            if vendorSigninID != "" {
+                performSegue(withIdentifier: "VendorHomeSegue", sender: self)
+            } else {
+                if buyerSigninID != "" {
+                    performSegue(withIdentifier: "VendorHomeSegue", sender: self)
+                } else {
+                    getBuyerOrVendor()
+//                    if buyerLogin {
+//                        performSegue(withIdentifier: "VendorHomeSegue", sender: self)
+//                    } else {
+//                        performSegue(withIdentifier: "VendorHomeSegue", sender: self)
+//                    }
+                }
+            }
+        }
+    }
+    // prompt for buyer/seller registration
+    func getBuyerOrVendor () {
+        buyerLogin = true
+        let alert = UIAlertController(title: "Registering", message: "Are you registering just as a vendor?", preferredStyle: .alert)
+        let buyerAction = UIAlertAction(title: "Buyer", style: .default) { action in
+            self.buyerLogin = true
+            self.performSegue(withIdentifier: "RegisterSegue", sender: self)
+        }
+        let vendorAction = UIAlertAction(title: "Vendor", style: .default) { action in
+            self.buyerLogin = false
+            self.performSegue(withIdentifier: "VendorHomeSegue", sender: self)
+        }
+//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+//        alert.addAction(cancelAction)
+        alert.addAction(buyerAction)
+        alert.addAction(vendorAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -150,16 +213,12 @@ class VendorTempViewController: UIViewController {
     
 
     // MARK: - Navigation
-    
+
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        var buyerFlag = false
-        if segue.identifier == "BuyerSetupSegue" {
-            buyerFlag = true
-        }
         switch segue.identifier {
             
         case "VendorHomeSegue"?:
@@ -189,7 +248,7 @@ class VendorTempViewController: UIViewController {
         case "BuyerSetupSegue"?:
 
 //            let VendorMain = segue.destination as! BuyerHomeVC
-//            VendorMain.buyerFlag = buyerFlag
+//            VendorMain.buyerLogin = buyerLogin
 //            VendorMain.userEmail = userEmail
 //            VendorMain.storeBuyers = storeBuyers
 //            VendorMain.allDatabaseIDs = allDatabaseIDs
@@ -199,7 +258,7 @@ class VendorTempViewController: UIViewController {
         case "VendorSetupSegue"?:
             
 //            let VendorMain = segue.destination as! BuyerHomeVC
-//            VendorMain.buyerFlag = buyerFlag
+//            VendorMain.buyerLogin = buyerLogin
 //            VendorMain.userEmail = userEmail
 //            VendorMain.storeVendors = storeVendors
 //            VendorMain.allDatabaseIDs = allDatabaseIDs

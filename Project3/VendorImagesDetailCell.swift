@@ -10,6 +10,8 @@ import UIKit
 
 class VendorImagesDetailCell: UITableViewCell {
 
+    @IBOutlet var imageNumLabel: UILabel!
+    @IBOutlet var photoImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -67,14 +67,13 @@ class BuyerDetailVController: UIViewController, UITableViewDelegate, UITableView
             channelRef.removeObserver(withHandle: refHandle)
         }
     }
-<<<<<<< HEAD
-=======
+
     
     
     @IBAction func addToCart() {
         
     }
->>>>>>> bd7912d1ba20b2cf2abb26a3109067d6416b085d
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1

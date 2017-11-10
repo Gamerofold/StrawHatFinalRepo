@@ -12,10 +12,11 @@ import FirebaseStorage
 
 class VendorDetailsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var passedID = 0
     var totalRows = 7
     var inventoryCount = 1
-    var userVendorID = 2000
-    var userStoreItemID = 5000
+    var userVendorID = 0
+    var userStoreItemID = ""
     var imagesDict: Dictionary = ["defaultPhoto.png": UIImage(named: "defaultPhoto")!]
     let storageRef = Storage.storage().reference()
     let refImageList = Database.database().reference(withPath: "image-list")
@@ -32,6 +33,7 @@ class VendorDetailsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     let refVendor = Database.database().reference(withPath: "vendors")
     var storeVendors: [Vendor] = []
     
+    @IBOutlet var menuButton: UIBarButtonItem!
     @IBOutlet var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,20 +74,31 @@ class VendorDetailsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? VendorMainDetailsCell  else {
                 fatalError("The dequeued cell is not an instance of VendorMainDetailCell.")
             }
-            
+            cell.nameText.text = storeItems[passedID].nameOfProduct
+            cell.priceText.text = String(format: "$%.2f",storeItems[passedID].price)
+            cell.idLabel.text = storeItems[passedID].key
+            cell.descriptionText.text = storeItems[passedID].description
+            cell.quantityText.text = String(storeItems[passedID].quantity) + " in stock"
             return cell
-        case _ where iRow < 5:
+        case 1:
+            // ratings/reviews
+            let cellIdentifier = "VendorReviewDetailCell"
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? VendorReviewDetailsCell else {
+                fatalError("The dequeued cell is not an instance of VendorImagesDetailCell.")
+            }
+            return cell
+
+        case _ where iRow < 4:
 // Images
             let cellIdentifier = "VendorImagesDetailsCell"
             guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? VendorImagesDetailCell else {
                 fatalError("The dequeued cell is not an instance of VendorImagesDetailCell.")
             }
-            return cell
-        case 5:
-// ratings/reviews
-            let cellIdentifier = "VendorReviewDetailCell"
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? VendorReviewDetailsCell else {
-                fatalError("The dequeued cell is not an instance of VendorImagesDetailCell.")
+            if iRow == 2 {
+                cell.photoImage.image = imagesDict[storeItems[passedID].imageName]
+                cell.imageNumLabel.text = "main image"
+            } else {
+                cell.imageNumLabel.text = "alt image"
             }
             return cell
         default:
@@ -102,6 +115,17 @@ class VendorDetailsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     
+    func sideMenus() {
+        if revealViewController() != nil {
+            
+            menuButton.target = revealViewController()
+            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            revealViewController().rearViewRevealWidth = 275
+            
+            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+    }
+
     /*
      // Override to support conditional editing of the table view.
      override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

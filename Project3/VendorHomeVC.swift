@@ -17,6 +17,7 @@ class VendorHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     
     var userEmail = ""
+    var passedID = 0
     var inventoryCount = 1
     var imagesDict: Dictionary = ["defaultPhoto.png": UIImage(named: "defaultPhoto")!]
     let storageRef = Storage.storage().reference()
@@ -119,6 +120,12 @@ class VendorHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        passedID = indexPath.row
+        performSegue(withIdentifier: "RowClickSegue", sender: self)
+    }
+    
     /*
      // Override to support conditional editing of the table view.
      override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -162,7 +169,7 @@ class VendorHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
-        if segue.identifier == "VendorDetailsSegue" {
+        if segue.identifier == "RowClickSegue" {
             let VendorDetails = segue.destination as! VendorDetailsVC
             
             VendorDetails.storeItems = storeItems
@@ -174,9 +181,10 @@ class VendorHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             VendorDetails.imagesDict = imagesDict
             VendorDetails.inventoryCount = inventoryCount
             VendorDetails.totalRows = 10
-            VendorDetails.userVendorID = 2003
-            VendorDetails.userStoreItemID = 5010
-            
+            VendorDetails.userVendorID = storeItems[passedID].vendorID
+            VendorDetails.passedID = passedID
+            VendorDetails.userStoreItemID = storeItems[passedID].key
+
         }
     }
     

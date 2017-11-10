@@ -10,6 +10,7 @@ import UIKit
 
 class VendorReviewDetailsCell: UITableViewCell {
 
+    @IBOutlet var textBoxText: UITextView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
