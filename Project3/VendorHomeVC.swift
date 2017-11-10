@@ -14,6 +14,7 @@ class VendorHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     @IBOutlet var tableView: UITableView!
     
+    var userEmail = ""
     var inventoryCount = 1
     var imagesDict: Dictionary = ["defaultPhoto.png": UIImage(named: "defaultPhoto")!]
     let storageRef = Storage.storage().reference()

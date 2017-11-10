@@ -14,7 +14,7 @@ class VendorTempViewController: UIViewController {
 
     var inventoryCount = 38
 
-
+    var userEmail = ""
     var imagesDict: Dictionary = ["defaultPhoto.png": UIImage(named: "defaultPhoto")!]
     var allDatabaseIDs = generateNewID(buyer: 1000, vendor: 2000, purchase: 3000, order: 4000, store: 5000) // dummy/temp variables
     var storeOrders: [Order] = []
@@ -28,6 +28,15 @@ class VendorTempViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let user = Auth.auth().currentUser
+        if let user = user {
+            // The user's ID, unique to the Firebase project.
+            // Do NOT use this value to authenticate with your backend server,
+            // if you have one. Use getTokenWithCompletion:completion: instead.
+            userEmail = user.email!
+            
+            // ...
+        }
         getImages()
         let refIDs = Database.database().reference(withPath: "IDs")
         refIDs.observe(.value, with: { snapshot in
@@ -146,11 +155,16 @@ class VendorTempViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "VendorHomeSegue" {
-
-
+        
+        var buyerFlag = false
+        if segue.identifier == "BuyerSetupSegue" {
+            buyerFlag = true
+        }
+        switch segue.identifier {
+            
+        case "VendorHomeSegue"?:
             let VendorMain = segue.destination as! VendorHomeVC
-
+            VendorMain.userEmail = userEmail
             VendorMain.storeItems = storeItems
             VendorMain.storeBuyers = storeBuyers
             VendorMain.storePurchases = storePurchases
@@ -159,8 +173,43 @@ class VendorTempViewController: UIViewController {
             VendorMain.allDatabaseIDs = allDatabaseIDs
             VendorMain.imagesDict = imagesDict
             VendorMain.inventoryCount = inventoryCount
-//
+            break
+        case "BuyerHomeSegue"?:
+//            let VendorMain = segue.destination as! BuyerHomeVC
+//            VendorMain.userEmail = userEmail
+//            VendorMain.storeItems = storeItems
+//            VendorMain.storeBuyers = storeBuyers
+//            VendorMain.storePurchases = storePurchases
+//            VendorMain.storeVendors = storeVendors
+//            VendorMain.storeOrders = storeOrders
+//            VendorMain.allDatabaseIDs = allDatabaseIDs
+//            VendorMain.imagesDict = imagesDict
+//            VendorMain.inventoryCount = inventoryCount
+            break
+        case "BuyerSetupSegue"?:
+
+//            let VendorMain = segue.destination as! BuyerHomeVC
+//            VendorMain.buyerFlag = buyerFlag
+//            VendorMain.userEmail = userEmail
+//            VendorMain.storeBuyers = storeBuyers
+//            VendorMain.allDatabaseIDs = allDatabaseIDs
+//            VendorMain.imagesDict = imagesDict
+//            VendorMain.inventoryCount = inventoryCount
+            break
+        case "VendorSetupSegue"?:
+            
+//            let VendorMain = segue.destination as! BuyerHomeVC
+//            VendorMain.buyerFlag = buyerFlag
+//            VendorMain.userEmail = userEmail
+//            VendorMain.storeVendors = storeVendors
+//            VendorMain.allDatabaseIDs = allDatabaseIDs
+//            VendorMain.imagesDict = imagesDict
+//            VendorMain.inventoryCount = inventoryCount
+            break
+        default:
+            break
         }
+
     }
     
     func getImages() {
@@ -171,7 +220,7 @@ class VendorTempViewController: UIViewController {
         imagesDict["msiMechKeyboard.jpg"] = UIImage(named:  "msiMechKeyboard.jpg")!
         imagesDict["n64Controller.jpeg"] = UIImage(named: "n64Controller.jpeg")!
         imagesDict["ps4ControllerRed.jpg"] = UIImage(named: "ps4ControllerRed.jpg")!
-        imagesDict["razrMouse.jpeg"] = UIImage(named:  "razrMouse.jpeg")!  //
+        imagesDict["razrMouse.jpeg"] = UIImage(named:  "razrMouse.jpeg")!
         imagesDict["arcade.jpg"] = UIImage(named:  "arcade.jpg")!
         imagesDict["atari.jpg"] = UIImage(named:  "atari.jpg")!
         imagesDict["gameBoy.jpeg"] = UIImage(named:  "gameBoy.jpeg")!
