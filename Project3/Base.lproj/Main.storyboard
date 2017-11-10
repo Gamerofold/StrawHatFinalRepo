@@ -509,7 +509,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uSi-LV-htx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3262" y="515"/>
+            <point key="canvasLocation" x="3937" y="515"/>
         </scene>
         <!--Check Out Table View Controller-->
         <scene sceneID="le9-Jd-k5T">
@@ -539,7 +539,7 @@
             </objects>
             <point key="canvasLocation" x="4044" y="515"/>
         </scene>
-        <!--Temp View for Vendors-->
+        <!--Straw Hats Game Ecommerce-->
         <scene sceneID="BpE-fu-qFl">
             <objects>
                 <viewController id="Dcw-pu-HNn" customClass="VendorTempViewController" customModule="Project3" customModuleProvider="target" sceneMemberID="viewController">
@@ -547,23 +547,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9NB-gL-nTE">
-                                <rect key="frame" x="129" y="80" width="117" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Bob's Views"/>
-                                <connections>
-                                    <segue destination="k2P-TM-yO8" kind="show" identifier="VendorHomeSegue" id="cwZ-WG-rhx"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCR-vE-Ls3">
+                                <rect key="frame" x="37.5" y="296" width="300" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="Cwe-Qh-8T5"/>
+                                    <constraint firstAttribute="width" constant="300" id="Vit-44-J4y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mCR-vE-Ls3" firstAttribute="centerY" secondItem="LvS-BV-jW0" secondAttribute="centerY" id="1j2-hg-1aL"/>
+                            <constraint firstItem="mCR-vE-Ls3" firstAttribute="centerX" secondItem="LvS-BV-jW0" secondAttribute="centerX" id="ObE-V4-A1f"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="myE-0u-xPS"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Temp View for Vendors" id="2PM-IK-evT"/>
+                    <navigationItem key="navigationItem" title="Straw Hats Game Ecommerce" leftItemsSupplementBackButton="YES" id="2PM-IK-evT">
+                        <barButtonItem key="backBarButtonItem" enabled="NO" title=" " id="GFk-32-xCJ"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="k2P-TM-yO8" kind="show" identifier="VendorHomeSegue" id="K3C-ON-qkp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t6q-nj-DKM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3262" y="1394"/>
+            <point key="canvasLocation" x="3261.5999999999999" y="514.99250374812596"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ZDK-gQ-BQm">

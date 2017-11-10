@@ -914,7 +914,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Project3/Project3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7K443T6W44;
+				DEVELOPMENT_TEAM = VNE5G69VK2;
 				INFOPLIST_FILE = Project3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rw.sean.gettingstarted;
@@ -934,7 +934,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Project3/Project3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7K443T6W44;
+				DEVELOPMENT_TEAM = VNE5G69VK2;
 				INFOPLIST_FILE = Project3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rw.sean.gettingstarted;
