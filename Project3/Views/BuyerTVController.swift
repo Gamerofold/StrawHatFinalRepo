@@ -11,6 +11,8 @@ import STRatingControl
 import Firebase
 import FirebaseDatabase
 
+
+var myIndexBuyer = 0
 enum Section: Int {
     case createNewChannelSection = 0
     case currentChannelsSection = 1
@@ -20,7 +22,7 @@ enum Section: Int {
 class BuyerTVController: UITableViewController {
 
     @IBOutlet var menuButton: UIBarButtonItem!
-    
+    var buyerDetailViewController: BuyerDetailVController?
     
     
     
@@ -28,7 +30,9 @@ class BuyerTVController: UITableViewController {
     private lazy var channelRef: DatabaseReference = Database.database().reference().child("store")
     private var channelRefHandle: DatabaseHandle?
    // var storeChannelRef = Database.database().reference(withPath: "store")
+    
     //Properties
+    var myIndexBuyer = 0
     var mySectionsCount = Int()
     var newChannelTextField: UITextField?
     var arrayOfProducts = [BuyerProducts]()
@@ -146,11 +150,12 @@ class BuyerTVController: UITableViewController {
             let channelData = snapshot.value as! Dictionary<String, AnyObject>
             //let id = snapshot.key
             // 3 You pull the data out of the snapshot and, if successful, create a Channel model and add it to your channels array.
-            print("my snapshot \(channelData)")
+            //print("my snapshot \(channelData)")
            if let name = channelData["nameOfProduct"] as! String!, name.characters.count > 0 {
                let myDescription = channelData["description"] as! String!
-            self.arrayOfProducts.append(BuyerProducts(photo: #imageLiteral(resourceName: "placeholder"), label: name, description: myDescription!))
-            
+            let image = channelData["imageName"] as! String!
+            self.arrayOfProducts.append(BuyerProducts(photo: UIImage(named: image!)!, label: name, description: myDescription!))
+            print(name)
                self.tableView.reloadData()
           } else {
              print("Error! Could not decode channel data")           }
@@ -167,6 +172,16 @@ class BuyerTVController: UITableViewController {
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
     }
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+       myIndexBuyer = indexPath.row
+        
+    }
+    
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -202,14 +217,18 @@ class BuyerTVController: UITableViewController {
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        buyerDetailViewController = segue.destination as? BuyerDetailVController
+       
+      buyerDetailViewController?.productDetail = arrayOfProducts
+        
+        //arrayOfProducts[myIndexBuyer](BuyerProducts(photo: #imageLiteral(resourceName: "placeholder"),  label: arrayOfProducts[myIndexBuyer].label , description: arrayOfProducts[myIndexBuyer].description))
     }
-    */
+
 
 }
