@@ -13,11 +13,12 @@ class CheckOutTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.tableView.register(UINib(nibName: "NumberOfItemsCell", bundle: nil), forCellReuseIdentifier: "NumberOfItemsCell")
+        self.tableView.register(UINib(nibName: "ItemTableViewCell", bundle: nil), forCellReuseIdentifier: "ItemTableViewCell")
+        self.tableView.register(UINib(nibName: "CartDetailCell", bundle: nil), forCellReuseIdentifier: "CartDetailCell")
+        self.tableView.register(UINib(nibName: "CartTotalCell", bundle: nil), forCellReuseIdentifier: "CartTotalCell")
+        self.tableView.register(UINib(nibName: "CheckOutButtonCell", bundle: nil), forCellReuseIdentifier: "CheckOutButtonCell")
+        
     }
 
     override func didReceiveMemoryWarning() {

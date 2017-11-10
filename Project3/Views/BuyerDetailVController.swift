@@ -26,6 +26,9 @@ class BuyerDetailVController: UIViewController, UITableViewDelegate, UITableView
     }
     
     
+    @IBAction func addToCart() {
+        
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
