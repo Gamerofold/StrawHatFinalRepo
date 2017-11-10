@@ -12,7 +12,9 @@ import FirebaseStorage
 
 class VendorHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet var menuButton: UIBarButtonItem!
     @IBOutlet var tableView: UITableView!
+    
     
     var userEmail = ""
     var inventoryCount = 1
@@ -35,6 +37,7 @@ class VendorHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       sideMenus()
         tableView.register(UINib.init(nibName: "NonVendorTViewCell", bundle: nil), forCellReuseIdentifier: "NonVendorTVCell")
         tableView.register(UINib.init(nibName: "VendorTViewCell", bundle: nil), forCellReuseIdentifier: "VendorTVCell")
         
@@ -106,7 +109,16 @@ class VendorHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         return cell
     }
     
-    
+    func sideMenus() {
+        if revealViewController() != nil {
+            
+            menuButton.target = revealViewController()
+            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            revealViewController().rearViewRevealWidth = 275
+            
+            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+    }
     /*
      // Override to support conditional editing of the table view.
      override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

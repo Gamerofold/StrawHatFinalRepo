@@ -675,7 +675,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="neN-Ka-IAR">
-                                <rect key="frame" x="0.0" y="224" width="375" height="394"/>
+                                <rect key="frame" x="0.0" y="224" width="375" height="350"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier1" id="o1K-Ua-ni9" customClass="TableViewCell" customModule="Project3" customModuleProvider="target">
@@ -707,7 +707,7 @@
                                     <constraint firstAttribute="height" constant="44" id="3i5-9S-EeO"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem systemItem="add" id="lGH-yi-zfz"/>
+                                    <barButtonItem image="hambuger menu" id="lGH-yi-zfz"/>
                                     <barButtonItem title="Profile" id="XJl-pc-fkz">
                                         <connections>
                                             <segue destination="IWR-iz-NiN" kind="show" id="S9P-aU-Sji"/>
@@ -736,13 +736,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1NZ-r2-IdZ"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="menuButton" destination="lGH-yi-zfz" id="nZe-FF-oeR"/>
                         <outlet property="tableView" destination="neN-Ka-IAR" id="l47-9r-gKE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rR8-wz-d8E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4044" y="1394"/>
+            <point key="canvasLocation" x="4044" y="1393.8530734632684"/>
         </scene>
         <!--VendorDetailVC-->
         <scene sceneID="j8e-XF-50s">
@@ -781,7 +784,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t6W-WV-mOM">
-                                <rect key="frame" x="0.0" y="224" width="375" height="394"/>
+                                <rect key="frame" x="0.0" y="224" width="375" height="350"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier2" rowHeight="120" id="5vB-Is-Ofb">
